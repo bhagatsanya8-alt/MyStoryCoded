@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyStoryCoded | Elegant Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F9F7F2;
+      --ink: #1A1B3A;
+      --slate: #6E7EAD;
+      --accent: #D85A30;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Nunito', sans-serif; 
+      background-color: var(--cream); 
+      color: var(--ink);
+      line-height: 1.8;
+      /* Subtle dot grid for a "notebook/code" vibe */
+      background-image: radial-gradient(rgba(26, 27, 58, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      padding: 40px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { 
+      font-weight: 700; 
+      font-size: 1.2rem; 
+      letter-spacing: 1px;
+      text-transform: lowercase;
+    }
+    .logo span { font-weight: 300; color: var(--slate); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 120px 20px 80px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--slate);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--slate);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    /* ── The "Anti-Block" Buttons ── */
+    .btn {
+      display: inline-block;
+      padding: 12px 40px;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.4s ease;
+    }
+    .btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* ── Elegant Features Section ── */
+    .features {
+      padding: 100px 60px;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature-item {
+      flex: 1;
+    }
+    .feature-item h3 {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--slate);
+    }
+    .feature-item p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* ── Subtle Form ── */
+    .contact {
+      padding: 100px 20px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .input-group {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(26, 27, 58, 0.2);
+      padding: 15px 0;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      border-bottom-color: var(--ink);
+    }
+
+    footer {
+      padding: 60px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--slate);
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .features { flex-direction: column; padding: 60px 30px; }
+      nav { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">mystory<span>coded</span></div>
+    <div style="font-size: 0.7rem; letter-spacing: 2px; opacity: 0.6;">GRADES 4 + 5</div>
+  </nav>
+
+  <section class="hero">
+    <h1>Write the story.<br><em>Code</em> the ending.</h1>
+    <p>A mobile creative studio bringing digital literacy to young thinkers.</p>
+    <a href="#inquire" class="btn">Inquire</a>
+  </section>
+
+  <section class="features">
+    <div class="feature-item">
+      <h3>The Concept</h3>
+      <p>We bridge the gap between creative writing and technical logic, allowing students to build interactive worlds.</p>
+    </div>
+    <div class="feature-item">
+      <h3>The Service</h3>
+      <p>Fully mobile. We arrive with all necessary hardware and a curriculum designed specifically for 4th and 5th graders.</p>
+    </div>
+    <div class="feature-item">
+      <h3>The Result</h3>
+      <p>A personal digital portfolio for every student, showcasing their growth in both narrative and code.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="inquire">
+    <div class="input-group">
+      <input type="text" placeholder="Name">
+    </div>
+    <div class="input-group">
+      <input type="email" placeholder="Email">
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Organization (School/Library)">
+    </div>
+    <a href="#" class="btn" style="width: 100%; text-align: center;">Send Message</a>
+  </section>
+
+  <footer>
+    &copy; 2026 MYSTORYCODED — ALL RIGHTS RESERVED
+  </footer>
+
+</body>
+</html>
