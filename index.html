@@ -6,12 +6,7 @@
   <title>MyStoryCoded | Python Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --cream: #F9F7F2;
-      --ink: #1A1B3A;
-      --slate: #6E7EAD;
-    }
-
+    :root { --cream: #F9F7F2; --ink: #1A1B3A; --slate: #6E7EAD; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body { 
@@ -23,119 +18,62 @@
       background-size: 30px 30px;
     }
 
-    nav {
-      padding: 40px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo { 
-      font-weight: 700; 
-      font-size: 1.2rem; 
-      letter-spacing: 1px;
-      text-transform: lowercase;
-    }
+    nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; text-transform: lowercase; }
     .logo span { font-weight: 300; color: var(--slate); }
 
-    .hero {
-      padding: 120px 20px 80px;
+    .hero { padding: 120px 20px 80px; text-align: center; max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 3.5rem; font-weight: 300; margin-bottom: 20px; letter-spacing: -1px; }
+    .hero h1 em { font-style: italic; color: var(--slate); }
+    .hero p { font-size: 1.2rem; font-weight: 300; color: var(--slate); max-width: 600px; margin: 0 auto 40px; }
+
+    /* ── Carousel Styling ── */
+    .testimonial-wrapper {
+      max-width: 700px;
+      margin: 80px auto;
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 0 20px;
+      min-height: 150px;
     }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 300;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--slate);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--slate);
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 40px;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: all 0.4s ease;
-    }
-    .btn:hover {
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .features {
-      padding: 100px 60px;
-      display: flex;
-      justify-content: space-between;
-      gap: 60px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .feature-item {
-      flex: 1;
-    }
-    .feature-item h3 {
-      font-size: 0.8rem;
+    .testimonial-label {
+      font-size: 0.7rem;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 20px;
       color: var(--slate);
-    }
-    .feature-item p {
-      font-size: 0.95rem;
-      font-weight: 400;
-    }
-
-    .contact {
-      padding: 100px 20px;
-      text-align: center;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .input-group {
       margin-bottom: 30px;
-      position: relative;
     }
-    input {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(26, 27, 58, 0.2);
-      padding: 15px 0;
-      font-family: inherit;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s;
+    .quote-container { position: relative; }
+    .quote {
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink);
+      display: none; /* Hidden by default for JS */
+      animation: fadeEffect 1s;
     }
-    input:focus {
-      border-bottom-color: var(--ink);
-    }
+    @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 
-    footer {
-      padding: 60px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--slate);
-      letter-spacing: 1px;
+    .features { padding: 60px 60px; display: flex; gap: 60px; max-width: 1100px; margin: 0 auto; }
+    .feature-item { flex: 1; }
+    .feature-item h3 { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; color: var(--slate); }
+
+    .contact { padding: 100px 20px; text-align: center; max-width: 500px; margin: 0 auto; }
+    input {
+      width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(26, 27, 58, 0.2);
+      padding: 15px 0; font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 30px;
     }
+    .btn {
+      display: inline-block; padding: 12px 40px; border: 1px solid var(--ink);
+      color: var(--ink); text-decoration: none; font-size: 0.9rem; letter-spacing: 2px;
+      text-transform: uppercase; transition: all 0.4s ease; cursor: pointer;
+    }
+    .btn:hover { background: var(--ink); color: var(--cream); }
+
+    footer { padding: 60px; text-align: center; font-size: 0.8rem; color: var(--slate); letter-spacing: 1px; }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
-      .features { flex-direction: column; padding: 60px 30px; }
+      .features { flex-direction: column; padding: 40px 30px; }
       nav { padding: 30px; }
     }
   </style>
@@ -149,41 +87,61 @@
 
   <section class="hero">
     <h1>Write the story.<br><em>Code</em> the adventure.</h1>
-    <p>In this fun, beginner-friendly class, students learn the basics of Python programming through games, challenges, and creative projects.</p>
-    <a href="#inquire" class="btn">Inquire</a>
+    <p>A beginner-friendly Python class where curiosity meets logic through games, challenges, and creative projects.</p>
   </section>
 
   <section class="features">
     <div class="feature-item">
       <h3>The Concept</h3>
-      <p>Each week builds on the last, covering topics such as variables, conditionals, and loops. We combine logic to make interactive programs while exploring how computers "think" through hands-on activities.</p>
+      <p>Covering variables, conditionals, and loops, we explore how computers "think" through hands-on activities that build on each other weekly.</p>
     </div>
     <div class="feature-item">
       <h3>The Projects</h3>
-      <p>Students will create their own games like "Guess the Number," design custom quizzes, and develop interactive programs that spark their curiosity and creativity.</p>
+      <p>From "Guess the Number" games to custom quizzes, students combine coding basics with creativity to make interactive programs.</p>
     </div>
     <div class="feature-item">
       <h3>The Focus</h3>
-      <p>No prior coding experience is needed. We focus on building confidence with code, understanding how programs work, and sparking a lifelong interest in computer science.</p>
+      <p>No prior experience needed. We focus on building confidence and sparking a lifelong interest in computer science.</p>
     </div>
   </section>
 
+  <div class="testimonial-wrapper">
+    <div class="testimonial-label">Parent & Student Feedback</div>
+    <div class="quote-container">
+      <p class="quote">"My son had the best time learning. He's already asking for the next advanced level of Python!"</p>
+      <p class="quote">"The instructor is excellent—kind, patient, and knows exactly how to keep the kids interested."</p>
+      <p class="quote">"Captivating and fun. Abstract concepts are explained using real-life examples that keep students impressed."</p>
+      <p class="quote">"A very fun, interactive experience! My child found the teacher so nice and encouraging."</p>
+    </div>
+  </div>
+
   <section class="contact" id="inquire">
-    <div class="input-group">
-      <input type="text" placeholder="Name">
-    </div>
-    <div class="input-group">
-      <input type="email" placeholder="Email">
-    </div>
-    <div class="input-group">
-      <input type="text" placeholder="Organization (School/Library)">
-    </div>
-    <a href="#" class="btn" style="width: 100%; text-align: center;">Send Message</a>
+    <div class="input-group"><input type="text" placeholder="Name"></div>
+    <div class="input-group"><input type="email" placeholder="Email"></div>
+    <div class="input-group"><input type="text" placeholder="Organization"></div>
+    <a href="mailto:hello@mystorycoded.com" class="btn">Send Inquiry</a>
   </section>
 
   <footer>
     &copy; 2026 MYSTORYCODED — ALL RIGHTS RESERVED
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("quote");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 4500); // Change image every 4.5 seconds
+    }
+  </script>
 
 </body>
 </html>
